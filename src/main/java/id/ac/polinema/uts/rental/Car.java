@@ -21,6 +21,7 @@ public class Car {
     private String model;
     private int year;
     private boolean available;
+    private Brand brand;
 
     /**
      * Membuat mobil baru yang masih tersedia (belum disewa).
@@ -29,7 +30,7 @@ public class Car {
      */
     public Car(String plate, String model, int year) {
         if (plate == null || plate.trim().isEmpty()) {
-            throw new IllegalArgumentException("Plate cannot be empty");
+            throw new IllegalArgumentException("Plate tidak boleh kosong");
         }
         this.plate = plate;
         setModel(model);
@@ -113,7 +114,7 @@ public class Car {
      */
     public void setModel(String model) {
         if (model == null || model.trim().isEmpty()) {
-            throw new IllegalArgumentException("Model cannot be null, empty, or blank");
+            throw new IllegalArgumentException("Model tidak boleh kosong");
         }
         this.model = model;
         // TODO Bantuan: periksa dulu, baru isi field. Class String punya method untuk
@@ -132,7 +133,7 @@ public class Car {
      */
     public void setYear(int year) {
         if (year < 1990) {
-            throw new IllegalArgumentException("Year must be at least 1990");
+            throw new IllegalArgumentException("Tahun minimal 1990");
         }
         this.year = year;
         // TODO Bantuan: pola yang sama dengan setModel. Apa syarat tahun yang valid?
@@ -142,5 +143,13 @@ public class Car {
         //       throw new IllegalArgumentException("____");
         //   }
         //   this.year = year;
+    }
+
+    public Brand getBrand() {
+        return brand;
+    }
+
+    public void setBrand(Brand brand) {
+        this.brand = brand;
     }
 }

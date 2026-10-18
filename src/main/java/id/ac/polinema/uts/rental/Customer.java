@@ -19,6 +19,7 @@ public class Customer {
     private String customerId;
     private String name;
     private int rentalCount;
+    private RentalCard card;
     /**
      * Membuat pelanggan yang belum punya sewa aktif.
      * customerId dan name tidak boleh null atau kosong: lempar
@@ -31,6 +32,7 @@ public class Customer {
         this.customerId = customerId;
         setName(name);
         this.rentalCount = 0;
+        this.card = new RentalCard("RC-" + customerId); // new bagian 4
         // TODO Bantuan: validasi dulu sebelum mengisi field. Aturan nama sama dengan setName.
         // Bagian 4: kartu rental juga dibuat di sini (lihat diagram Bagian 4).
         //
@@ -70,6 +72,11 @@ public class Customer {
     public int getRentalCount() {
         return rentalCount;
         // TODO Bantuan: kembalikan jumlah sewa aktif saat ini.
+    }
+
+    public RentalCard getCard() {
+        return card;
+        //new method getter bagian 4
     }
 
     /** True jika pelanggan masih boleh menyewa (batasnya 2 sewa aktif). */
