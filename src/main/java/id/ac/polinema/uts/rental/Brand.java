@@ -27,7 +27,6 @@ public class Brand {
         // Kerangka:
         //   this.name = ____;
         //   this.country = ____;
-        throw new UnsupportedOperationException("Not implemented yet");
     }
 
     public String getName() {

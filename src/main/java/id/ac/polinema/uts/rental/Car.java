@@ -102,7 +102,6 @@ public class Car {
         //
         // Kerangka:
         //   ____ = true;
-        throw new UnsupportedOperationException("Not implemented yet");
     }
 
     /**
@@ -118,7 +117,6 @@ public class Car {
         //       throw new IllegalArgumentException("____");
         //   }
         //   this.model = model;
-        throw new UnsupportedOperationException("Not implemented yet");
     }
 
     /**
@@ -133,6 +131,5 @@ public class Car {
         //       throw new IllegalArgumentException("____");
         //   }
         //   this.year = year;
-        throw new UnsupportedOperationException("Not implemented yet");
     }
 }
