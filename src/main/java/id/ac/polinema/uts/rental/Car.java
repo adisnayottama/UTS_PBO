@@ -17,6 +17,10 @@ package id.ac.polinema.uts.rental;
  *   public ____ available;
  */
 public class Car {
+    public String plate;
+    public String model;
+    public int year;
+    public boolean available;
 
     /**
      * Membuat mobil baru yang masih tersedia (belum disewa).
@@ -24,6 +28,10 @@ public class Car {
      * (tahun minimal 1990).
      */
     public Car(String plate, String model, int year) {
+        this.plate = plate;
+        this.model = model;
+        this.year = year;
+        this.available = true;
         // TODO Bantuan: isi semua field. Mobil baru: apakah sedang disewa atau tidak?
         // Bagian 3: aturan validasi model dan tahun sama dengan setter. Bisakah constructor
         // memakai setter-nya?
@@ -41,30 +49,30 @@ public class Car {
     }
 
     public String getPlate() {
+        return plate;
         // TODO Bantuan: kembalikan data yang disimpan constructor.
         //
         // Kerangka:
         //   return ____;
-        throw new UnsupportedOperationException("Not implemented yet");
     }
 
     public String getModel() {
+        return model;
         // TODO Bantuan: sama seperti getPlate.
-        throw new UnsupportedOperationException("Not implemented yet");
     }
 
     public int getYear() {
+        return year;
         // TODO Bantuan: sama seperti getPlate.
-        throw new UnsupportedOperationException("Not implemented yet");
     }
 
     /** True jika mobil ada di garasi (tidak sedang disewa). */
     public boolean isAvailable() {
+        return available;
         // TODO Bantuan: field apa yang menyimpan status sewa?
         //
         // Kerangka:
         //   return ____;
-        throw new UnsupportedOperationException("Not implemented yet");
     }
 
     /**
@@ -72,6 +80,11 @@ public class Car {
      * disewa, hasilnya false dan keadaan mobil tidak berubah.
      */
     public boolean rentOut() {
+        if (!available) {
+            return false;
+        }
+        available = false;
+        return true;
         // TODO Bantuan: apa yang harus kamu periksa lebih dulu sebelum mengubah status?
         // Method ini punya dua jalur return yang berbeda.
         //
@@ -81,7 +94,6 @@ public class Car {
         //   }
         //   ____ = false;
         //   return true;
-        throw new UnsupportedOperationException("Not implemented yet");
     }
 
     /** Mobil dikembalikan: mobil bisa disewa lagi. */
