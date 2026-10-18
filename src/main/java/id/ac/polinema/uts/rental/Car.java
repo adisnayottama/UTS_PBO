@@ -17,10 +17,10 @@ package id.ac.polinema.uts.rental;
  *   public ____ available;
  */
 public class Car {
-    public String plate;
-    public String model;
-    public int year;
-    public boolean available;
+    private String plate;
+    private String model;
+    private int year;
+    private boolean available;
 
     /**
      * Membuat mobil baru yang masih tersedia (belum disewa).
@@ -28,9 +28,12 @@ public class Car {
      * (tahun minimal 1990).
      */
     public Car(String plate, String model, int year) {
+        if (plate == null || plate.trim().isEmpty()) {
+            throw new IllegalArgumentException("Plate cannot be empty");
+        }
         this.plate = plate;
-        this.model = model;
-        this.year = year;
+        setModel(model);
+        setYear(year);
         this.available = true;
         // TODO Bantuan: isi semua field. Mobil baru: apakah sedang disewa atau tidak?
         // Bagian 3: aturan validasi model dan tahun sama dengan setter. Bisakah constructor
@@ -109,6 +112,10 @@ public class Car {
      * dengan IllegalArgumentException, dan model lama tetap.
      */
     public void setModel(String model) {
+        if (model == null || model.trim().isEmpty()) {
+            throw new IllegalArgumentException("Model cannot be null, empty, or blank");
+        }
+        this.model = model;
         // TODO Bantuan: periksa dulu, baru isi field. Class String punya method untuk
         // memeriksa teks kosong atau hanya spasi. Jangan lupa kemungkinan null.
         //
@@ -124,6 +131,10 @@ public class Car {
      * IllegalArgumentException, dan tahun lama tetap.
      */
     public void setYear(int year) {
+        if (year < 1990) {
+            throw new IllegalArgumentException("Year must be at least 1990");
+        }
+        this.year = year;
         // TODO Bantuan: pola yang sama dengan setModel. Apa syarat tahun yang valid?
         //
         // Kerangka:

@@ -14,8 +14,8 @@ package id.ac.polinema.uts.rental;
  *   public ____ country;
  */
 public class Brand {
-    public String name;
-    public String country;
+    private String name;
+    private String country;
 
     /** Membuat merek dengan nama dan negara asal. */
     public Brand(String name, String country) {
