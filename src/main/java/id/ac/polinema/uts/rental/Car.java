@@ -45,7 +45,6 @@ public class Car {
         // Kerangka (Bagian 3): ganti dua baris model dan year dengan pemanggilan setter.
         //   setModel(____);
         //   setYear(____);
-        throw new UnsupportedOperationException("Not implemented yet");
     }
 
     public String getPlate() {
@@ -98,6 +97,7 @@ public class Car {
 
     /** Mobil dikembalikan: mobil bisa disewa lagi. */
     public void returnVehicle() {
+        available = true;
         // TODO Bantuan: satu baris saja. Status apa yang berubah?
         //
         // Kerangka:
