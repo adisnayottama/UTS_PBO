@@ -16,7 +16,7 @@ package id.ac.polinema.uts.rental;
  *   public ____ year;
  *   public ____ available;
  */
-public class Car {
+public class Car extends  Vehicle{
     private String plate;
     private String model;
     private int year;
@@ -29,6 +29,7 @@ public class Car {
      * (tahun minimal 1990).
      */
     public Car(String plate, String model, int year) {
+        super(model, year); // memanggil constructor vehicle
         if (plate == null || plate.trim().isEmpty()) {
             throw new IllegalArgumentException("Plate tidak boleh kosong");
         }

@@ -1,0 +1,14 @@
+package id.ac.polinema.uts.rental;
+
+public class Motorcycle extends Vehicle {
+    private int engineCc;
+
+    public Motorcycle(String model, int year, int engineCc) {
+        super(model, year);
+        this.engineCc = engineCc;
+    }
+
+    public int getEngineCc() {
+        return engineCc;
+    }
+}
