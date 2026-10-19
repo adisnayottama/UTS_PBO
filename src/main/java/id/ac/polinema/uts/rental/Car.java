@@ -45,6 +45,11 @@ public class Car extends  Vehicle{
         //   setModel(____);
         //   setYear(____);
     }
+    //Constructor overloading (langsing isi merk)
+    public Car(String plate, String model, int year, Brand brand){
+        this(plate, model, year);
+        this.brand = brand;
+    }
 
     public String getPlate() {
         return plate;
@@ -60,5 +65,16 @@ public class Car extends  Vehicle{
 
     public void setBrand(Brand brand) {
         this.brand = brand;
+    }
+
+    @Override 
+    public int dailyRate() {
+        return 350000;
+    }
+
+    @Override 
+    public String describe() {
+        String brandName = (brand != null) ? brand.getName() : "Unknown" ;
+        return model + " (" + year + ") - " + brandName;
     }
 }

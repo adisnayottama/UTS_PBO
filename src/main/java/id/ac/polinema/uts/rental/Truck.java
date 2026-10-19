@@ -7,6 +7,11 @@ public class Truck extends Vehicle {
         super(model, year);
         this.loadTons = loadTons;
     }
+    //Contructor overloading (2 parameter)
+    public Truck(String model, int year) {
+        super(model, year);
+        this.loadTons = 5;
+    }
 
     public int getLoadTons() {
         return loadTons;

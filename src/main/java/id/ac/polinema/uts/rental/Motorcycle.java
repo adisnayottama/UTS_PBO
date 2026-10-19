@@ -11,4 +11,14 @@ public class Motorcycle extends Vehicle {
     public int getEngineCc() {
         return engineCc;
     }
+
+    @Override 
+    public int dailyRate() {
+        return 100000;
+    }
+
+    @Override 
+    public String describe() {
+        return model + " (" + year + ") [" + engineCc + " cc]";
+    }
 }

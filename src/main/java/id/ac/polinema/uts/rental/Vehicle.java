@@ -4,11 +4,13 @@ public class Vehicle {
     protected String model;
     protected int year;
     private boolean available;
+    private int extraDays;
 
     public Vehicle(String model, int year) {
         setModel(model);
         setYear(year);
         this.available = true;
+        this.extraDays = 0;
     }
 
     public String getModel() {
@@ -47,5 +49,33 @@ public class Vehicle {
 
     public void returnVehicle() {
         available = true;
+    }
+    //Method bagian 6
+    public int dailyRate() {
+        return 250000;
+    }
+
+    public String describe() {
+        return model + " (" + year + ")";
+    }
+
+    @Override 
+    public String toString() {
+        return describe();
+    }
+
+    public void extendRental() {
+        this.extraDays += 2;
+    }
+
+    public void extendRental(int days) {
+        if (days <= 0) {
+            throw new IllegalArgumentException("Hari harus lebih dari 0");
+        }
+        this.extraDays += days;
+    }
+
+    public int getTotalRentalDays() {
+        return 1 + extraDays;
     }
 }
