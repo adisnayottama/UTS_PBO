@@ -18,9 +18,6 @@ package id.ac.polinema.uts.rental;
  */
 public class Car extends  Vehicle{
     private String plate;
-    private String model;
-    private int year;
-    private boolean available;
     private Brand brand;
 
     /**
@@ -34,9 +31,6 @@ public class Car extends  Vehicle{
             throw new IllegalArgumentException("Plate tidak boleh kosong");
         }
         this.plate = plate;
-        setModel(model);
-        setYear(year);
-        this.available = true;
         // TODO Bantuan: isi semua field. Mobil baru: apakah sedang disewa atau tidak?
         // Bagian 3: aturan validasi model dan tahun sama dengan setter. Bisakah constructor
         // memakai setter-nya?
@@ -58,92 +52,6 @@ public class Car extends  Vehicle{
         //
         // Kerangka:
         //   return ____;
-    }
-
-    public String getModel() {
-        return model;
-        // TODO Bantuan: sama seperti getPlate.
-    }
-
-    public int getYear() {
-        return year;
-        // TODO Bantuan: sama seperti getPlate.
-    }
-
-    /** True jika mobil ada di garasi (tidak sedang disewa). */
-    public boolean isAvailable() {
-        return available;
-        // TODO Bantuan: field apa yang menyimpan status sewa?
-        //
-        // Kerangka:
-        //   return ____;
-    }
-
-    /**
-     * Menyewa mobil. Berhasil (true) jika mobil tersedia. Jika mobil sedang
-     * disewa, hasilnya false dan keadaan mobil tidak berubah.
-     */
-    public boolean rentOut() {
-        if (!available) {
-            return false;
-        }
-        available = false;
-        return true;
-        // TODO Bantuan: apa yang harus kamu periksa lebih dulu sebelum mengubah status?
-        // Method ini punya dua jalur return yang berbeda.
-        //
-        // Kerangka:
-        //   if (____) {
-        //       return false;
-        //   }
-        //   ____ = false;
-        //   return true;
-    }
-
-    /** Mobil dikembalikan: mobil bisa disewa lagi. */
-    public void returnVehicle() {
-        available = true;
-        // TODO Bantuan: satu baris saja. Status apa yang berubah?
-        //
-        // Kerangka:
-        //   ____ = true;
-    }
-
-    /**
-     * Bagian 3. Mengubah model. Model null, kosong, atau hanya spasi ditolak
-     * dengan IllegalArgumentException, dan model lama tetap.
-     */
-    public void setModel(String model) {
-        if (model == null || model.trim().isEmpty()) {
-            throw new IllegalArgumentException("Model tidak boleh kosong");
-        }
-        this.model = model;
-        // TODO Bantuan: periksa dulu, baru isi field. Class String punya method untuk
-        // memeriksa teks kosong atau hanya spasi. Jangan lupa kemungkinan null.
-        //
-        // Kerangka:
-        //   if (model == null || ____) {
-        //       throw new IllegalArgumentException("____");
-        //   }
-        //   this.model = model;
-    }
-
-    /**
-     * Bagian 3. Mengubah tahun produksi. Tahun di bawah 1990 ditolak dengan
-     * IllegalArgumentException, dan tahun lama tetap.
-     */
-    public void setYear(int year) {
-        if (year < 1990) {
-            throw new IllegalArgumentException("Tahun minimal 1990");
-        }
-        this.year = year;
-        // TODO Bantuan: pola yang sama dengan setModel. Apa syarat tahun yang valid?
-        //
-        // Kerangka:
-        //   if (year ____ 1990) {
-        //       throw new IllegalArgumentException("____");
-        //   }
-        //   this.year = year;
     }
 
     public Brand getBrand() {
