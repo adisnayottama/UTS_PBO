@@ -42,8 +42,7 @@ public class RentalApp {
         }
     }
 
-    // Mencetak prompt (tanpa pindah baris), lalu membaca satu baris tanpa spasi di
-    // ujung.
+    // Mencetak prompt (tanpa pindah baris), lalu membaca satu baris tanpa spasi di ujung.
     private String readLine(String prompt) {
         out.print(prompt);
         if (!in.hasNextLine()) {

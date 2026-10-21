@@ -15,7 +15,7 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("Welcome to Polinema Rental");
-
+        
         RentalShop shop = new RentalShop("Polinema Rental");
 
         Car car = new Car("N 1234 AB", "Avanza", 2021, new Brand("Toyota", "Japan"));

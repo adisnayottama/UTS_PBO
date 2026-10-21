@@ -3,12 +3,14 @@ package id.ac.polinema.uts.rental;
 import java.util.Arrays;
 
 public class RentalShop {
+    //Enkapsulasi (private field)
     private String name;
-    private Vehicle[] vehicles;
+    private Vehicle[] vehicles; // agregasi
     private int vehicleCount;
     private Customer[] customers;
     private int customerCount;
 
+    // inisialisasi toko
     public RentalShop(String name) {
         this.name = name;
         this.vehicles = new Vehicle[20];
@@ -21,11 +23,12 @@ public class RentalShop {
         return name;
     }
 
+    //proses agregasi => masuk array toko
     public boolean addVehicle(Vehicle vehicle) {
         if (vehicle == null || vehicleCount >= 20) {
             return false;
         }
-        vehicles[vehicleCount] = vehicle;
+        vehicles[vehicleCount] = vehicle; // objek luar diagregasi
         vehicleCount++;
         return true;
     }
@@ -85,6 +88,7 @@ public class RentalShop {
         return Arrays.copyOf(temp, foundCount);
     }
 
+    //method transaksi ren dan giveBack
     public boolean rent(String customerId, String model) {
         Customer customer = findCustomer(customerId);
         Vehicle vehicle = findVehicleByModel(model);
@@ -100,7 +104,7 @@ public class RentalShop {
                 return true;
             }
         }
-        return false;
+        return false; //logika sewa
     }
 
     public boolean giveBack(String customerId, String model) {
@@ -116,6 +120,6 @@ public class RentalShop {
             vehicle.returnVehicle();
             return customer.returnRental();
         }
-        return false;
+        return false; //logika pengembalian
     }
 }

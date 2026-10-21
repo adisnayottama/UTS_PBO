@@ -16,7 +16,7 @@ package id.ac.polinema.uts.rental;
  *   public ____ year;
  *   public ____ available;
  */
-public class Car extends  Vehicle{
+public class Car extends  Vehicle{ //inheritance
     private String plate;
     private Brand brand;
 
